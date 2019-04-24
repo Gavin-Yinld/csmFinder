@@ -1,4 +1,4 @@
-<div align=center><img width="300" height="320" src="https://github.com/Gavin-Yinld/csmFinder/blob/master/csmFinder.gif"/></div>
+<div align=center><img width="300" height="320" src="https://github.com/Gavin-Yinld/csmFInder/blob/master/figures/csmFinder.gif"/></div>
 
 # csmFinder
 
