@@ -16,3 +16,6 @@ The package includes two main function modules, the first one identify pCSM loci
 * Calculate methylation level in pCSM loci
 * Co-methylation analysis to cluster pCSM loci with similar methylation pattern into co-methylated modules
 * PCA analysis to extract eigen-pCSM loci representing methylation trend of ecah co-methylation module
+
+# Installation
+csmFinder needs the following tools to be installed and available in the `PATH` environment:
