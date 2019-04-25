@@ -1,4 +1,4 @@
-co_methylation_step1 <- function(kmeans_data,softPower_list,plot=FALSE){
+co_methylation_step2 <- function(kmeans_data,softPower_list,plot=FALSE){
   options(stringsAsFactors=F)
   all.data <- NULL
   all.label <- NULL
