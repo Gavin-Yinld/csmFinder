@@ -24,6 +24,9 @@ csmFinder needs the following tools to be installed and available in the `PATH` 
 
 In R console,
 ```R
+
+
 library("devtools")
-install_github("Gavin-Yinld/csmFinder")
+devtools::install_github("PhanstielLab/bedtoolsr")
+devtools::install_github("Gavin-Yinld/csmFinder")
 ```
