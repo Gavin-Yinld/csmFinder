@@ -413,7 +413,7 @@ return(l)
 #####################################################################
 order_by_marginal <- function(X,Y,M)
 {
-  newM <- sort(M)
+  newM <- base::sort(M)
   I <- order(M)
   newX <- X[I,]
   newY <- Y[I]
