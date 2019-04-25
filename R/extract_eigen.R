@@ -1,6 +1,10 @@
 
-eig_num_per_module <- function(label,total_number=10000)
-{
+
+
+extract_eigen <- function(csm.ml ,all_label , number_of_eig )
+{	
+	eig_num_per_module <- function(label,total_number=10000)
+	{
 	freq <- table(label)
 	base_line <- floor(total_number/length(freq))
 	min_cluster_num <- min(freq)
@@ -39,11 +43,9 @@ eig_num_per_module <- function(label,total_number=10000)
 		picked_num <- sum(result$number)
 	}
 	return(result)
-}
+	}
 
 
-extract_eigen <- function(csm.ml ,all_label , number_of_eig )
-{	
 	number_per_module <- eig_num_per_module(label=all_label,total_number=number_of_eig)
 	nmf.input=NULL
 	nmf.input.label <- NULL
