@@ -19,5 +19,5 @@ The package includes two main function modules, the first one identify pCSM loci
 
 # Installation
 csmFinder needs the following tools to be installed and available in the `PATH` environment:
-1.  [python2](https://www.python.org/downloads/) (>=2.7.0), to process the bismark extractor results
-2.  bedtools (>=2.27.1) to merge the overlapped pCSM segments into pCSM loci
+1.  [python2](https://www.python.org/downloads/) (>=2.7.10), to process the bismark extractor results
+2.  [bedtools2](arq5x/bedtools2) (>=2.27.1) to merge the overlapped pCSM segments into pCSM loci
