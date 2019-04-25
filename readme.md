@@ -19,3 +19,5 @@ The package includes two main function modules, the first one identify pCSM loci
 
 # Installation
 csmFinder needs the following tools to be installed and available in the `PATH` environment:
+1. python
+2. bedtools
