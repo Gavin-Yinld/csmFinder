@@ -52,7 +52,7 @@ chr1	3021720
 ...
 ```
 For bulk methylome, the 4-CpG segments could be extracted as follow:
-In R console,
+
 ```perl
 library('csmFinder') 
 #get the demo dataset
@@ -71,7 +71,6 @@ segment[2:5,]
 ```
 For single-cell methylomes, `file_type="single-cell"` argument is needed, and the 4-CpG segments could be extracted as follow:
 
-In R console,
 ```R
 dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
 file_list <- paste(dir,list.files(dir),sep='/')
