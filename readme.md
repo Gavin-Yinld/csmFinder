@@ -55,7 +55,7 @@ For bulk methylome, the 4-CpG segments could be extracted as follow:
 
 ```perl
 library('csmFinder') 
-#get the demo dataset
+#get the demo datasets
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
 CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep='/')
 #generate the 4-CpG segment
@@ -72,8 +72,10 @@ segment[2:5,]
 For single-cell methylomes, `file_type="single-cell"` argument is needed, and the 4-CpG segments could be extracted as follow:
 
 ```R
+#get the demo datasets
 dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
 file_list <- paste(dir,list.files(dir),sep='/')
+#generate the 4-CpG segment
 segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
 The data format of single-cell methylome analysis is keep pace with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
