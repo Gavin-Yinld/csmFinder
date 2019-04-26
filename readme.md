@@ -51,7 +51,7 @@ chr1	3021400
 chr1	3021720
 ...
 ```
-The 4-CpG segments could be extrated as follow:
+The 4-CpG segments could be extracted as follow:
 ```
 library('csmFinder') 
 #get the demo dataset
