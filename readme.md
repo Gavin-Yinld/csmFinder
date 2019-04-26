@@ -52,7 +52,7 @@ chr1	3021720
 ...
 ```
 The 4-CpG segments could be extracted as follow:
-```C
+```python
 library('csmFinder') 
 #get the demo dataset
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
