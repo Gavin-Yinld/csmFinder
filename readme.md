@@ -58,8 +58,10 @@ library('csmFinder')
 #get the demo datasets
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
 CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep='/')
+
 #generate the 4-CpG segment
 segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
+
 #see what the segment looks like
 segment[2:5,] 
                                     V1                    V2
@@ -116,6 +118,7 @@ pcsm_segment
 28 2.482661e-05
 29 1.766860e-07
 30 0.000000e+00
+
 #for single-cell methylome
 pcsm2_segment <- csmFinder(candidate2,data_type='single-cell')
 ```
