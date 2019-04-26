@@ -76,4 +76,5 @@ dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_f
 file_list <- paste(dir,list.files(dir),sep='/')
 segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
+The data format single-cell methylome analysis is keep pace with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 
