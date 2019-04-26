@@ -88,6 +88,7 @@ In R console,
 ```perl
 #for bulk methylome
 candidate <- find_candidate(segment,depth=10)
+#see what the segment looks like
 candidate[1:5,]
                                      V1                     V2
 8  chr1:3026929_3026936_3026969_3027017         0000:8;1111:5;
