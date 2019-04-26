@@ -53,7 +53,7 @@ chr1	3021720
 ```
 For bulk methylome, the 4-CpG segments could be extracted as follow:
 
-```perl
+```R
 library('csmFinder') 
 #get the demo dataset
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
@@ -62,16 +62,17 @@ CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep=
 segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
 #see what the segment looks like
 segment[2:5,] 
-                                    V1                    V2
+```                                    V1                    V2
 2 chr1:3026187_3026278_3026310_3026413 0001:1;0101:2;1101:1;
 3 chr1:3026278_3026310_3026413_3026420 0011:3;1011:4;1111:1;
 4 chr1:3026864_3026883_3026895_3026926        0111:2;1111:1;
 5 chr1:3026883_3026895_3026926_3026929               1111:3;
 #the first column denotes the genomic coordinate of the segment, the second column denotes the methylation pattern of the segment, for example, "1111:3" means this segment covered by 3 totlly methylated reads in this genomic loci.
 ```
+```
 For single-cell methylomes, `file_type="single-cell"` argument is needed, and the 4-CpG segments could be extracted as follow:
 
-```R
+```
 dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
 file_list <- paste(dir,list.files(dir),sep='/')
 segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
