@@ -104,7 +104,7 @@ candidate2 <- find_candidate(segment2,data_type="single-cell",depth=10)
 For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as so called pCSM loci. For single cell methylomes, a beta mixture model is used to identify the genomic loci with bipolar methylation pattern across single cells.
 ```R
 #for bulk methylome
-pcsm <- csmFinder(candidate,data_type='regular')
+pcsm_segment <- csmFinder(candidate,data_type='regular')
 #for single-cell methylome
-pcsm2 <- csmFinder(candidate2,data_type='single-cell',depth=10)
+pcsm2_segment <- csmFinder(candidate2,data_type='single-cell')
 ```
