@@ -124,3 +124,4 @@ pcsm_segment
 #for single-cell methylome
 pcsm2_segment <- csmFinder(candidate2,data_type='single-cell')
 ```
+#For the illustration of the output of single-cell analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
