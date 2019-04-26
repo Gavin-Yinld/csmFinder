@@ -77,6 +77,7 @@ For single-cell methylomes, `file_type="single-cell"` argument is needed, and th
 #get the demo datasets
 dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
 file_list <- paste(dir,list.files(dir),sep='/')
+
 #generate the 4-CpG segment
 segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
@@ -118,6 +119,7 @@ pcsm_segment
 28 2.482661e-05
 29 1.766860e-07
 30 0.000000e+00
+#"d" means the methylation difference between hypo- and hyper-methylated reads, "pval" is the statistical significance of the difference between hypo- and hyper-methylated reads.
 
 #for single-cell methylome
 pcsm2_segment <- csmFinder(candidate2,data_type='single-cell')
