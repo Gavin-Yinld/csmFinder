@@ -127,7 +127,18 @@ pcsm_segment2 <- csmFinder(candidate2,data_type='single-cell')
 For the illustration of the output of single-cell analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 ## Step 4. Merge the overlapped pCSM segment to pCSM loci
 ```R
+#for bulk methylome
 pcsm_loci <- merge_segment(pcsm_segment)
+pcsm_loci
+    V1      V2      V3
+1 chr1 3027075 3027102
+2 chr1 3031383 3031539
+3 chr1 3031581 3031632
+4 chr1 3035642 3035833
+5 chr1 3035927 3036246
+6 chr1 3037739 3037802
+
+#for single-cell methylome
 pcsm_loci2 <- merge_segment(pcsm_segment2,data_type="single-cell")
 ```
 
