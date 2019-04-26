@@ -88,6 +88,14 @@ In R console,
 ```R
 #for bulk methylome
 candidate <- find_candidate(segment,depth=10)
+candidate[1:5,]
+                                     V1                     V2
+8  chr1:3026929_3026936_3026969_3027017         0000:8;1111:5;
+16 chr1:3027091_3027102_3027106_3027144 0000:15;1110:3;1111:6;
+28 chr1:3031539_3031569_3031573_3031581  0000:1;0111:1;1111:9;
+29 chr1:3031569_3031573_3031581_3031586 0000:4;1110:1;1111:11;
+30 chr1:3031573_3031581_3031586_3031623         0000:2;1111:9;
+
 #for single-cell methylome
 candidate2 <- find_candidate(segment2,data_type="single-cell",depth=10)
 ```
