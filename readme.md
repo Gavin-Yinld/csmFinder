@@ -100,3 +100,10 @@ candidate[1:5,]
 #for single-cell methylome
 candidate2 <- find_candidate(segment2,data_type="single-cell",depth=10)
 ```
+## Step 3. Identify pCSM segment with bipolar methylation pattern
+```R
+#for bulk methylome
+pcsm <- csmFinder(candidate,data_type='regular')
+#for single-cell methylome
+pcsm2 <- csmFinder(candidate2,data_type='single-cell',depth=10)
+```
