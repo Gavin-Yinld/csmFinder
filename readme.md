@@ -69,7 +69,8 @@ segment[2:5,]
 5 chr1:3026883_3026895_3026926_3026929               1111:3;
 #the first column denotes the genomic coordinate of the segment, the second column denotes the methylation pattern of the segment, for example, "1111:3" means this segment covered by 3 totlly methylated reads in this genomic loci.
 ```
-For single-cell methylomes, the 4-CpG segments could be extracted as follow:
+For single-cell methylomes, file_type="single-cell" argument is needed, and the 4-CpG segments could be extracted as follow:
+
 In R console,
 ```R
 dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
