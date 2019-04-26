@@ -83,7 +83,7 @@ The data format of single-cell methylome analysis is keep pace with our previous
 ## Step 2. Find the candidate pCSM segment
 The segment meet the following 2 conditions are considered as candidate pCSM segment:
 1. The read depth (for bulk methylome) or number of cells covered the segment (for single-cell methylome) greater than threshold (default: 10)
-2. Covered by totlly methylated read and totlly unmethylated read (totlly methylated cell and totlly unmethylated cell for single-cell analysis ) at the same time. 
+2. Covered by totally methylated read and totally unmethylated read (totlly methylated cell and totlly unmethylated cell for single-cell analysis ) in this segment at the same time. 
 In R console,
 ```R
 #for bulk methylome
