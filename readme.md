@@ -34,7 +34,7 @@ devtools::install_github(c("PhanstielLab/bedtoolsr","Gavin-Yinld/csmFinder"))
 ```
 #How to Use
 
-##Step 1. Process bismark extractor result of CpG context to 4-CpG segment
+Step 1. Process bismark extractor result of CpG context to 4-CpG segment
 
 
 
