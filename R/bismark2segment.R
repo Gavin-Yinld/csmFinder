@@ -1,10 +1,10 @@
 bismark2segment <- function(files,file_type="regular",CpG_file,tmp_folder="temp",split_by_chrom=FALSE)
 {
   options(stringsAsFactors=F)
-  require(R.utils)
-  require(data.table)
-  require(stringr)
-  require(reticulate)
+  #require(R.utils)
+  #require(data.table)
+  #require(stringr)
+  #require(reticulate)
   reticulate::source_python(paste(system.file(package="csmFinder"), "bismark2segment.py", sep="/"))
   work_dir <- getwd()
   if(!file.exists(tmp_folder)) {dir.create(tmp_folder)}
