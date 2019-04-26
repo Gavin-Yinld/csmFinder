@@ -80,3 +80,12 @@ segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG
 ```
 The data format of single-cell methylome analysis is keep pace with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 
+## Step 2. Find the candidate pCSM segment
+
+In R console,
+```R
+#for bulk methylome
+candidate <- find_candidate(segment,depth=10)
+#for single-cell methylome
+candidate2 <- find_candidate(segment2,data_type="single-cell",depth=10)
+```
