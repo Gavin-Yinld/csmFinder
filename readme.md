@@ -125,3 +125,9 @@ pcsm_segment
 pcsm2_segment <- csmFinder(candidate2,data_type='single-cell')
 ```
 For the illustration of the output of single-cell analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
+## Step 4. Merge the overlapped pCSM segment to pCSM loci
+```R
+pcsm_loci <- merge_segment(pcsm_segment)
+pcsm_loci2 <- merge_segment(pcsm_segment2,data_type="single-cell")
+```
+
