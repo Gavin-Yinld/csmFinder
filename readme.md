@@ -52,7 +52,7 @@ chr1	3021720
 ...
 ```
 The 4-CpG segments could be extrated as follow:
-```R
+```
 library('csmFinder') 
 #get the demo dataset
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
@@ -62,7 +62,6 @@ segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
 [1] "demo.dataset.gz"
 [1] "generating 4-CpG segments"
 [1] "loading CpG index and filtering the discontinuous 4-CpG segments"
-segment[2:5,]
 ```
 
 
