@@ -67,7 +67,7 @@ segment[2:5,]
 3 chr1:3026278_3026310_3026413_3026420 0011:3;1011:4;1111:1;
 4 chr1:3026864_3026883_3026895_3026926        0111:2;1111:1;
 5 chr1:3026883_3026895_3026926_3026929               1111:3;
-
+#the first column denotes the genomic coordinate of the segment, the second column denotes the methylation pattern of the segment, for example, "1111:3" means this segment covered by 3 totlly methylated reads in this genomic loci.
 ```
 
 
