@@ -18,7 +18,7 @@ find_candidate <- function(segment,depth=10,thread=1,data_type='regular')
 	find_candidate_bulk <- function(segment,coverage=10,thread=1){
 	require(data.table)
 	options(stringsAsFactors=F)
-	require(stringr)
+	#require(stringr)
 	beta.input <- as.data.frame(segment)
 
 
@@ -51,9 +51,9 @@ find_candidate <- function(segment,depth=10,thread=1,data_type='regular')
 	}
 
 	find_candidate_single_cell <- function(segment,cell_thre=8,thread=1){
-	library(data.table)
+	#library(data.table)
 	options(stringsAsFactors=F)
-	library(stringr)
+	#library(stringr)
 	beta.input <- as.data.frame(segment)
 	#print("read input finished")
 	control_set <- beta.input[which(beta.input[,5]>=cell_thre),]
