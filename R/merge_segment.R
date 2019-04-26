@@ -8,8 +8,8 @@ merge_segment_bulk <- function(csm_detect_output)
   loci_mat <- str_split(loci, ':', n = Inf, simplify = TRUE)
   pos_mat <- str_split(loci_mat[,2], '_', n = Inf, simplify = TRUE)
   data <- data.frame(chr=loci_mat[,1],start=as.numeric(pos_mat[,1]),end=as.numeric(pos_mat[,4]))
-  data <- bedtoolsr::sort(data)
-  csm_region <- bedtoolsr::merge(data)
+  data <- bedtoolsr::bt.sort(data)
+  csm_region <- bedtoolsr::bt.merge(data)
   return(csm_region)
 }
 
@@ -18,8 +18,8 @@ merge_segment_single_cell <- function(beta_output)
   options(stringsAsFactors=F)
   require("bedtoolsr")
   data <- data.frame(chr=beta_output[,1],start=as.numeric(beta_output[,2]),end=as.numeric(beta_output[,3]))
-  data <- bedtoolsr::sort(data)
-  csm_region <- bedtoolsr::merge(data)
+  data <- bedtoolsr::bt.sort(data)
+  csm_region <- bedtoolsr::bt.merge(data)
   return(csm_region)
 }
 
@@ -38,8 +38,4 @@ merge_segment <- function(pCSM_segment,data_type="regular")
   }
   return(pCSM_loci)
 }
-
-
-
-
 
