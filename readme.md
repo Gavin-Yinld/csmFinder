@@ -51,7 +51,14 @@ chr1	3021400
 chr1	3021720
 ...
 ```
-
+The 4-CpG segments could be extrated as follow:
+```R
+#load the package
+library('csmFinder') 
+#get the demo dataset
+bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
+CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep='/')
+```
 
 
 
