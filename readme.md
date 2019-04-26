@@ -60,7 +60,8 @@ CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep=
 #generate the 4-CpG segment
 segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
 #see what the segment looks like
-segment[2:5,]                                    V1                    V2
+segment[2:5,] 
+                                    V1                    V2
 2 chr1:3026187_3026278_3026310_3026413 0001:1;0101:2;1101:1;
 3 chr1:3026278_3026310_3026413_3026420 0011:3;1011:4;1111:1;
 4 chr1:3026864_3026883_3026895_3026926        0111:2;1111:1;
