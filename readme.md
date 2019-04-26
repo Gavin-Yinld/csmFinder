@@ -105,6 +105,12 @@ For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for g
 ```R
 #for bulk methylome
 pcsm_segment <- csmFinder(candidate,data_type='regular')
+
+                                    V1	            V2	d	pval
+8 chr1:3026929_3026936_3026969_3027017	0000:8;1111:5;	1	0
+28	chr1:3031539_3031569_3031573_3031581	0000:1;0111:1;1111:9;	0.975	2.48266063388458e-05
+29	chr1:3031569_3031573_3031581_3031586	0000:4;1110:1;1111:11;	0.979166666666667	1.76686044239815e-07
+30	chr1:3031573_3031581_3031586_3031623	0000:2;1111:9;	1	0
 #for single-cell methylome
 pcsm2_segment <- csmFinder(candidate2,data_type='single-cell')
 ```
