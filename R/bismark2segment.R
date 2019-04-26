@@ -41,9 +41,9 @@ bismark2segment <- function(files,file_type="regular",CpG_file,tmp_folder="temp"
     return(segment)
   } else {
     setwd(tmp_folder)
+    print("reading bismark report file...")
     for(CpgReport.gz in files)
       {
-        print("reading bismark report file...")
         print(CpgReport.gz)
         file=tail(unlist(strsplit(CpgReport.gz,'/')),1)
         destname=gsub(".gz","",file)
