@@ -52,6 +52,7 @@ chr1	3021720
 ...
 ```
 The 4-CpG segments could be extracted as follow:
+In R console,
 ```perl
 library('csmFinder') 
 #get the demo dataset
