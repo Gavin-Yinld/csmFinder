@@ -85,7 +85,7 @@ The segment meet the following 2 conditions are considered as candidate pCSM seg
 1. The read depth (for bulk methylome) or number of cells covered the segment (for single-cell methylome) greater than threshold (default: 10)
 2. Covered by totally methylated read and totally unmethylated read (totlly methylated cell and totlly unmethylated cell for single-cell analysis ) in this segment at the same time. 
 In R console,
-```R
+```perl
 #for bulk methylome
 candidate <- find_candidate(segment,depth=10)
 candidate[1:5,]
