@@ -30,6 +30,5 @@ In R console,
 source("http://bioconductor.org/biocLite.R")
 biocLite(c("GenomicRanges","WGCNA"))
 library("devtools")
-devtools::install_github("PhanstielLab/bedtoolsr")
-devtools::install_github("Gavin-Yinld/csmFinder")
+devtools::install_github(c("PhanstielLab/bedtoolsr","Gavin-Yinld/csmFinder"))
 ```
