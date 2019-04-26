@@ -35,7 +35,7 @@ devtools::install_github(c("PhanstielLab/bedtoolsr","Gavin-Yinld/csmFinder"))
 ## Step 1. Process bismark extractor result  to 4-CpG segment
 Typically, bisulfite converted reads are aligned to the genome by processing alignments. `csmFinder` takes that methylation value per base information in each sequence read as input. Such input file may be obtained from `bismark` pipeline, a typical input file should in ".gz" compressed format and looks like this:
 
-```Bismark methylation extractor version v0.16.3
+```
 ST-E00523:376:HL7JTCCXY:4:1102:23054:14494_1:N:0:ATGAGCAT + chr1  3023890 Z
 ST-E00523:376:HL7JTCCXY:4:1102:23054:14494_1:N:0:ATGAGCAT + chr1  3023859 Z
 ST-E00523:376:HL7JTCCXY:4:1107:31730:36592_1:N:0:ATGAGCAT + chr1  3023890 Z
