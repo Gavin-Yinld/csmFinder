@@ -22,7 +22,7 @@ devtools::install_github("Gavin-Yinld/csmFinder")
 # How to Use
 
 ## Step 1. Generate 4-CpG segments from bismark extractor results
-`csmFinder` takes methylation state per base information in each sequence read as input. Such input file may be obtained from `bismark` pipeline, a typical input file should be in ".gz" compressed format and looks like this:
+`csmFinder` takes methylation state per base information of each sequence read in CpG context specificlly as input. Such input file may be obtained from `bismark` pipeline. A typical input file should be in ".gz" compressed format and looks like this:
 
 ```
 ST-E00523:376:HL7JTCCXY:4:1102:23054:14494_1:N:0:ATGAGCAT + chr1  3023890 Z
