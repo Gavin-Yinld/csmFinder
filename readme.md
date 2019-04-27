@@ -31,7 +31,8 @@ ST-E00523:376:HL7JTCCXY:4:1107:31730:36592_1:N:0:ATGAGCAT + chr1  3023890 Z
 ST-E00523:376:HL7JTCCXY:4:1107:31730:36592_1:N:0:ATGAGCAT + chr1  3023859 Z
 ST-E00523:376:HL7JTCCXY:4:1204:29305:15232_1:N:0:ATGAGCAT + chr1  3022537 Z
 ```
-To generate the 4-CpG segment coordinate, another table seperated text file contains all the CpG sites in forward strand of target genome is needed.
+To generate the 4-CpG segment coordinate, another table seperated text file contains the position of C in CpG context
+in forward strand of target genome is needed.
 
 ```chr1	3021025
 chr1	3021077
