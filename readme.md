@@ -122,6 +122,7 @@ scPcsm_segment <- csmFinder(scCandidate,data_type='single-cell')
 ```
 For the illustration of the output of single-cell analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 ## Step 4. Merge the overlapped pCSM segments to pCSM loci
+For both bulk methylome and single-cell methylome, the immediately overlapped pCSM segments are merged into pCSM region when `extension=0`. If `extension=>0`, the pCSM segments will be extended in both upstream and downstream, after the extension, the overlapped ones are merged into pCSM loci.
 ```R
 #for bulk methylome
 pcsm_loci <- merge_segment(pcsm_segment,extension=0)
