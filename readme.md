@@ -75,7 +75,7 @@ scDataDir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_ext
 file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 
 #generate the 4-CpG segment
-segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
+scSegment <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
 The data format of single-cell methylome analysis is consistent with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 
@@ -97,7 +97,7 @@ candidate[1:5,]
 30 chr1:3031573_3031581_3031586_3031623         0000:2;1111:9;
 
 #for single-cell methylome
-candidate2 <- find_candidate(segment2,data_type="single-cell",depth=10)
+scCandidate <- find_candidate(scSegment,data_type="single-cell",depth=10)
 ```
 ## Step 3. Identify pCSM segments 
 For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as so called pCSM loci. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets.
@@ -118,7 +118,7 @@ pcsm_segment
 #"d" means the methylation difference between hypo- and hyper-methylated reads.
 
 #for single-cell methylome
-pcsm_segment2 <- csmFinder(candidate2,data_type='single-cell')
+scPcsm_segment <- csmFinder(scCandidate,data_type='single-cell')
 ```
 For the illustration of the output of single-cell analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 ## Step 4. Merge the overlapped pCSM segments to pCSM loci
@@ -135,6 +135,6 @@ pcsm_loci
 6 chr1 3037739 3037802
 
 #for single-cell methylome
-pcsm_loci2 <- merge_segment(pcsm_segment2,data_type="single-cell",extension=0)
+scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
 ```
 
