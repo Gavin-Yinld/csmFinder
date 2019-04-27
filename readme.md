@@ -60,13 +60,12 @@ segment[2:5,]
 3 chr1:3026278_3026310_3026413_3026420 0011:3;1011:4;1111:1;
 4 chr1:3026864_3026883_3026895_3026926        0111:2;1111:1;
 5 chr1:3026883_3026895_3026926_3026929               1111:3;
-#The first column denotes the genomic coordinate of the segment.
-#The second column denotes the methylation pattern of the segment. 
-#All pattern information are separated by semicolon.
-##Each pattern information contains two parts splited by colon
-#The pattern and the read depth supporting the pattern. 
-#The pattern part denotes the methylation states of all CpG in the segment with 0 representing for unmethylation and 1 for methylation.
-#For example, "1111:3" means this segment covered by 3 totlly methylated reads in this genomic loci.
+# The first column denotes the genomic coordinate of the segment.
+# The second column denotes the methylation pattern of the segment. 
+# All pattern information are separated by semicolon.
+# Each pattern information contains two parts splited by colon, the pattern and the read depth supporting the pattern. 
+# The pattern part denotes the methylation states of all CpG in the segment with 0 representing for unmethylation and 1 for methylation.
+# For example, "1111:3" means this segment covered by 3 totlly methylated reads in this genomic loci.
 ```
 For single-cell methylomes, `file_type="single-cell"` argument is needed, and the 4-CpG segments could be extracted as follow:
 
