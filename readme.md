@@ -44,7 +44,8 @@ chr1	3021720
 For bulk methylome, the 4-CpG segments could be extracted as follow:
 
 ```perl
-library('csmFinder') 
+library('csmFinder')
+
 #get the demo datasets
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
 CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep='/')
