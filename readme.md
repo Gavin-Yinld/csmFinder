@@ -4,10 +4,10 @@
 
 # Introduction
 
-csmFinder is an R package for identifying putative cell-subset specific DNA methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset. Both of them identify the genomic loci with significant methylation difference bwtween two subsets as pCSM loci. 
+`csmFinder` is an R package for identifying putative cell-subset specific DNA methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset. Both of them identify the genomic loci with significant methylation difference bwtween two subsets as pCSM loci. 
 
 # Installation
-csmFinder needs the following tools to be installed and available in the `PATH` environment:
+`csmFinder` needs the following tools to be installed and available in the `PATH` environment:
 1.  [R](https://www.r-project.org/)(>=3.4.4)
 2.  [python2](https://www.python.org/downloads/) (>=2.7.10), with Numpy and Pandas module, to process the bismark extractor results
 3.  [bedtools2](https://github.com/arq5x/bedtools2) (>=2.28.0), to merge the overlapped pCSM segments into pCSM loci
@@ -22,7 +22,7 @@ devtools::install_github("Gavin-Yinld/csmFinder")
 # How to Use
 
 ## Step 1. Generate 4-CpG segments from bismark extractor results
-Typically, bisulfite converted reads are aligned to the genome by processing alignments. `csmFinder` takes that methylation value per base information in each sequence read as input. Such input file may be obtained from `bismark` pipeline, a typical input file should in ".gz" compressed format and looks like this:
+`csmFinder` takes that methylation value per base information in each sequence read as input. Such input file may be obtained from `bismark` pipeline, a typical input file should in ".gz" compressed format and looks like this:
 
 ```
 ST-E00523:376:HL7JTCCXY:4:1102:23054:14494_1:N:0:ATGAGCAT + chr1  3023890 Z
