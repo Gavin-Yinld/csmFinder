@@ -9,7 +9,7 @@ csmFinder is an R package for identifying putative cell-subset specific DNA meth
 # Current Features
 * Generate 4-CpG segments from bismark extractor results
 * Identify candidate segments covered by totally methylated and unmethylated reads (or single cells)
-* Identify pCSM 4-CpG segments with bipolar methylation pattern
+* Identify pCSM 4-CpG segments 
 * Merge pCSM segments to pCSM loci
 
 
@@ -98,8 +98,8 @@ candidate[1:5,]
 #for single-cell methylome
 candidate2 <- find_candidate(segment2,data_type="single-cell",depth=10)
 ```
-## Step 3. Identify pCSM segment with bipolar methylation pattern
-For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as so called pCSM loci. For single cell methylomes, a beta mixture model is used to identify the genomic loci with bipolar methylation pattern across single cells.
+## Step 3. Identify pCSM segment 
+For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as so called pCSM loci. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets.
 ```perl
 #for bulk methylome
 pcsm_segment <- csmFinder(candidate,data_type='regular')
