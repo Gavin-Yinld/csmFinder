@@ -72,8 +72,8 @@ For single-cell methylomes, `file_type="single-cell"` argument is needed, and th
 
 ```R
 #get the demo datasets
-dir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
-file_list <- paste(dir,list.files(dir),sep='/')
+scDataDir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
+file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 
 #generate the 4-CpG segment
 segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
