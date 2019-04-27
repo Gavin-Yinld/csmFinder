@@ -11,7 +11,7 @@ csmFinder is an R package for identifying putative cell-subset specific methylat
 * Identify candidate segments covered by totally methylated and unmethylated reads (or single cells)
 * Identify pCSM 4-CpG segments with bipolar methylation pattern
 * Merge pCSM segments to pCSM loci
-* Calculate methylation level in pCSM loci
+
 
 # Installation
 csmFinder needs the following tools to be installed and available in the `PATH` environment:
@@ -21,10 +21,9 @@ csmFinder needs the following tools to be installed and available in the `PATH` 
 
 In R console,
 ```R
-source("http://bioconductor.org/biocLite.R")
-biocLite(c("GenomicRanges","WGCNA"))
 library("devtools")
-devtools::install_github(c("PhanstielLab/bedtoolsr","Gavin-Yinld/csmFinder"))
+devtools::install_github("PhanstielLab/bedtoolsr") # to merge the overlopped pCSM segments
+devtools::install_github("Gavin-Yinld/csmFinder")
 ```
 # How to Use
 
