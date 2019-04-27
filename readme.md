@@ -4,7 +4,7 @@
 
 # Introduction
 
-csmFinder is an R package for identifying putative cell-subset specific methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, it uses beta mixture model to identify the genomic loci with bipolar methylation pattern across single cells. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as pCSM loci. 
+csmFinder is an R package for identifying putative cell-subset specific DNA methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, a beta mixture model is involved to identify the genomic loci with bipolar methylation pattern across single cells. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as pCSM loci. 
 
 # Current Features
 * Generate 4-CpG segments from bismark extractor results
