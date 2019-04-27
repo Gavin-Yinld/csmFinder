@@ -78,7 +78,7 @@ file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 #generate the 4-CpG segment
 segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
-The data format of single-cell methylome analysis is keep pace with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
+The data format of single-cell methylome analysis is consistent with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 
 ## Step 2. Find the candidate pCSM segments
 The segments satisfy the following 2 criterions are considered as candidate pCSM segment:
