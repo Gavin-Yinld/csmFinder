@@ -21,6 +21,7 @@ csmFinder needs the following tools to be installed and available in the `PATH` 
 
 In R console,
 ```R
+install.packages("devtools")
 library("devtools")
 devtools::install_github("PhanstielLab/bedtoolsr") # to merge the overlopped pCSM segments
 devtools::install_github("Gavin-Yinld/csmFinder")
