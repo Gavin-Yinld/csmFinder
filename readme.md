@@ -81,7 +81,7 @@ segment2 <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG
 The data format of single-cell methylome analysis is keep pace with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 
 ## Step 2. Find the candidate pCSM segments
-The segment meet the following 2 conditions are considered as candidate pCSM segment:
+The segments satisfy the following 2 criterions are considered as candidate pCSM segment:
 1. The read depth (for bulk methylome) or number of cells covered the segment (for single-cell methylome) greater than threshold (default: 10)
 2. Covered by totally methylated read and totally unmethylated read (totlly methylated cell and totlly unmethylated cell for single-cell analysis ) in this segment at the same time. 
 In R console,
