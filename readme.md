@@ -6,13 +6,6 @@
 
 csmFinder is an R package for identifying putative cell-subset specific DNA methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset. Both of them identify the genomic loci with significant methylation difference bwtween two subsets as pCSM loci. 
 
-# Current Features
-* Generate 4-CpG segments from bismark extractor results
-* Identify candidate segments covered by totally methylated and unmethylated reads (or single cells)
-* Identify pCSM 4-CpG segments 
-* Merge pCSM segments to pCSM loci
-
-
 # Installation
 csmFinder needs the following tools to be installed and available in the `PATH` environment:
 1.  [R](https://www.r-project.org/)(>=3.4.4)
@@ -28,7 +21,7 @@ devtools::install_github("Gavin-Yinld/csmFinder")
 ```
 # How to Use
 
-## Step 1. Process bismark extractor result  to 4-CpG segment
+## Step 1. Generate 4-CpG segments from bismark extractor results
 Typically, bisulfite converted reads are aligned to the genome by processing alignments. `csmFinder` takes that methylation value per base information in each sequence read as input. Such input file may be obtained from `bismark` pipeline, a typical input file should in ".gz" compressed format and looks like this:
 
 ```
