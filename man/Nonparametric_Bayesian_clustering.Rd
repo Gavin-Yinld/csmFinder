@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-
+nonparametric_Bayesian_clustering
 }
 \description{
 Grouping the sequence reads into hyper- and hypo-methylated subsets, and identify the segments with significant methylation difference bwtween two subsets as pCSM loci.
