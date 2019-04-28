@@ -56,14 +56,21 @@ loading and processing the CpG index may need several minutes
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-file <- paste(system.file(package='csmFinder'),'extdata/bulk_CpG_extract_file/chr19.demo.dataset.gz',sep='/')
-segment <- bismark2segment(file)
+#get the demo datasets
+bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
+CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep='/')
+
+#generate the 4-CpG segment
+segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
+
 
 #############################
+#get the demo datasets
+scDataDir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
+file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 
-file_dir <- paste(system.file(package='csmFinder'),"extdata/single_cell_CpG_extract_file",sep='/')
-file_list <- paste(file_dir,list.files(file_dir),sep='/')
-segment <- bismark2segment(files=file_list,file_type="single-cell")
+#generate the 4-CpG segment
+scSegment <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
