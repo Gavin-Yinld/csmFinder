@@ -71,7 +71,7 @@ options(stringsAsFactors=F)
 require(stringr,quietly = TRUE,warn.conflicts = FALSE)
 require(data.table,quietly = TRUE,warn.conflicts = FALSE)
 require(reticulate,quietly = TRUE,warn.conflicts = FALSE)
-reticulate::source_python(paste(system.file(package="csmFinder"), "read_segment_for_beta_mixture.v2.py", sep="/"))
+reticulate::source_python(paste(system.file(package="csmFinder"), "read_segment_for_beta_mixture.py", sep="/"))
 read_segment_for_beta_mixture(path2segments,outdir,as.numeric(split_by_chrom))
 if(split_by_chrom==TRUE){
   segments_info <- list()
