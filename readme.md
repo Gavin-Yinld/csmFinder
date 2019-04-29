@@ -100,7 +100,7 @@ candidate[1:5,]
 scCandidate <- find_candidate(scSegment,data_type="single-cell",depth=10)
 ```
 ## Step 3. Identify pCSM segments 
-For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as so called pCSM loci. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets.
+For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as pCSM segments. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets.
 ```perl
 #for bulk methylome
 pcsm_segment <- csmFinder(candidate,data_type='regular',thread=1)
