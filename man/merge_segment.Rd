@@ -10,7 +10,7 @@ Merge overlapped 4-CpG segments into pCSM regions
 This function is used to convert the 4-CpG segments into pCSM loci/region
 }
 \usage{
-merge_segment(pCSM_segment,data_type="regular")
+merge_segment(pCSM_segment,data_type="regular",extension=0)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -22,6 +22,11 @@ the segments determined as the pCSM
 %%     ~~Describe \code{x} here~~
 "regular" and "single-cell" denotes regular datasets and single-cell datasets, respectively
 }
+  \item{extension}{
+%%     ~~Describe \code{x} here~~
+the length of bases need to be extended, for example, extension=100 means that extend the pCSM segments 100bp in both of their upstream and downstream.
+}
+  
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
