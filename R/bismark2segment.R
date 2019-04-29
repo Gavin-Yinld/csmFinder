@@ -23,7 +23,7 @@ bismark2segment <- function(files,file_type="regular",CpG_file,tmp_folder="temp"
     print("generating 4-CpG segments")
     handle_bismark(getwd())
     file.remove(list.files(getwd(),pattern="bis_$"))
-    print("loading CpG index and filtering the discontinuous 4-CpG segments")
+    #print("loading CpG index and filtering the discontinuous 4-CpG segments")
     process_segment(CpG_file,getwd())
     file.remove(list.files(getwd(),pattern="segment_$"))
     merge_segment(getwd())
