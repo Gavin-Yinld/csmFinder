@@ -56,9 +56,8 @@ loading and processing the CpG index may need several minutes
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-#For bulk methylome, the 4-CpG segments could be extracted as follow:
-#get the demo datasets
 library('csmFinder')
+#For bulk methylome, the 4-CpG segments could be extracted as follow:
 
 #get the demo datasets
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
