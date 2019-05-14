@@ -20,7 +20,7 @@ bismark2segment(files,file_type="regular",CpG_file,tmp_folder="temp",split_by_ch
   \item{file_type}{Type of input dataset with "regular" represents the regular methylation data and "single-cell" represents single-cell mathylation data.
 %%     ~~Describe \code{x} here~~
 }
-  \item{CpG_file}{File includes the coordinate of all the CpG loci in the genome, with two columns separated by tab, the chromsome id in the first column and location in the second column
+  \item{CpG_file}{File includes the coordinate of all the CpG loci in forward strand of the target genome, with two columns separated by tab, the chromsome id in the first column and location in the second column
 %%     ~~Describe \code{x} here~~
 }
 \item{split_by_chrom}{Logical; Used for single-cell datasets when the number of cells is huge. Note that by setting split_by_chrom=TRUE, a list will be returned with each elements represents the input of beta mixture model for one chromsome
