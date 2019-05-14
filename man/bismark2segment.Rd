@@ -56,6 +56,10 @@ loading and processing the CpG index may need several minutes
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+#For bulk methylome, the 4-CpG segments could be extracted as follow:
+#get the demo datasets
+library('csmFinder')
+
 #get the demo datasets
 bismark_result=paste(system.file(package="csmFinder"),"extdata/bulk_CpG_extract_file/demo.dataset.gz",sep='/')
 CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep='/')
@@ -63,8 +67,14 @@ CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep=
 #generate the 4-CpG segment
 segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
 
+#see what the segment looks like
+segment[2:5,] 
+ 
+
 
 #############################
+#For single-cell methylomes, file_type="single-cell" argument is needed, and the 4-CpG segments could be extracted as follow:
+
 #get the demo datasets
 scDataDir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
 file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
