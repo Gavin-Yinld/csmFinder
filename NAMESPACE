@@ -1,5 +1,5 @@
 export(Nonparametric_Bayesian_clustering)
-export(beta_mixture_model)
+export(run.beta.mixture.model)
 export(bismark2segment)
 export(csmFinder)
 export(find_candidate)
