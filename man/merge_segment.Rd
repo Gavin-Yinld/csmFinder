@@ -3,11 +3,11 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-Merge overlapped 4-CpG segments into pCSM regions
+Merge adjacent 4-CpG segments into pCSM regions
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
-This function is used to convert the 4-CpG segments into pCSM loci/region
+This function is used to convert the 4-CpG segments into pCSM loci
 }
 \usage{
 merge_segment(pCSM_segment,data_type="regular",extension=0)
@@ -16,11 +16,11 @@ merge_segment(pCSM_segment,data_type="regular",extension=0)
 \arguments{
   \item{pCSM_segment}{
 %%     ~~Describe \code{x} here~~
-the segments determined as the pCSM
+the segments determined as the pCSM segments
 }
   \item{data_type}{
 %%     ~~Describe \code{x} here~~
-"regular" and "single-cell" denotes regular datasets and single-cell datasets, respectively
+"regular" and "single-cell" represents regular datasets and single-cell datasets, respectively
 }
   \item{extension}{
 %%     ~~Describe \code{x} here~~
@@ -54,10 +54,8 @@ the length of bases need to be extended, for example, extension=100 means that e
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-pcsm_loci <- merge_segment(pcsm)
-pcsm_loci2 <- merge_segment(pcsm2,data_type="single-cell")
+#for bulk methylome
+#pcsm_loci <- merge_segment(pcsm_segment,extension=0)
+#for single-cell methylome
+#scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
