@@ -3,7 +3,7 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-Process bismark report file to 4-CpG segments information for pCSM loci identification
+Extract 4-CpG segments information from bismark reporting file for pCSM loci identification
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -20,10 +20,10 @@ bismark2segment(files,file_type="regular",CpG_file,tmp_folder="temp",split_by_ch
   \item{file_type}{Type of input dataset with "regular" represents the regular methylation data and "single-cell" represents single-cell mathylation data.
 %%     ~~Describe \code{x} here~~
 }
-  \item{CpG_file}{File includes the coordinate of all the CpG loci in forward strand of the target genome, with two columns separated by tab, the chromsome id in the first column and location in the second column
+  \item{CpG_file}{File includes the coordinate of all the CpG loci in forward strand of the target genome, with two columns separated by tab, the chromsome id in the first column and location in the second column.
 %%     ~~Describe \code{x} here~~
 }
-\item{split_by_chrom}{Logical; Used for single-cell datasets when the number of cells is huge. Note that by setting split_by_chrom=TRUE, a list will be returned with each elements represents the input of beta mixture model for one chromsome
+\item{split_by_chrom}{Logical; Used for single-cell datasets when the number of cells is huge. Note that by setting split_by_chrom=TRUE, a list will be returned with each elements represents the input of beta mixture model for one chromsome.
 %%     ~~Describe \code{x} here~~
 }
 
@@ -66,20 +66,18 @@ CpG_ref=paste(system.file(package="csmFinder"),"extdata/CpG_plus.reference",sep=
 #generate the 4-CpG segment
 segment <- bismark2segment(files=bismark_result,CpG_file=CpG_ref)
 
-#see what the segment looks like
-segment[2:5,] 
- 
-
-
 #############################
-#For single-cell methylomes, file_type="single-cell" argument is needed, and the 4-CpG segments could be extracted as follow:
+#For single-cell methylomes, file_type="single-cell" argument is needed, 
+#  and the 4-CpG segments could be extracted as follow:
 
 #get the demo datasets
-scDataDir <- paste(system.file(package="csmFinder"),"extdata/single_cell_CpG_extract_file",sep='/')
+scDataDir <- paste(system.file(package="csmFinder"),
+                   "extdata/single_cell_CpG_extract_file",sep='/')
 file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 
 #generate the 4-CpG segment
-scSegment <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
+scSegment <- bismark2segment(files=file_list,file_type="single-cell",
+                             CpG_file=CpG_ref)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
