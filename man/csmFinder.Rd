@@ -66,7 +66,7 @@ Luo, Y., et al., 2018, Integrative single-cell omics analyses reveal epigenetic 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-###need achieved candidate object from former steps.  
+###need object for 'candidate' from former steps.  
 #for bulk methylome
 #pcsm_segment <- csmFinder(candidate,data_type='regular',thread=1)
 
