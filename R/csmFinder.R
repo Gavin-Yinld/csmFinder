@@ -5,6 +5,6 @@ csmFinder <- function(candidate,data_type='regular',depth=10,distance=0.3,pval=0
     pCSM <- pCSM[which(pCSM$d>=distance & pCSM$pval<=pval),]
 
   }else{
-    pCSM <- beta_mixture_model(candidate,thread=thread,cell_number=depth,adjusted_pval=pval,distance=distance)
+    pCSM <- run.beta.mixture.model(candidate,thread=thread,cell_number=depth,adjusted_pval=pval,distance=distance)
   }
 }
