@@ -10,7 +10,7 @@ beta mixure model to decect pCSM loci
 This function is used for identifying the pCSM loci from single-cell methylomes. Briefly, a beta mixture model is utilized to divide the single-cells with hyper and hypo-methylation state into different cell subsets in a given CSM candidate region and determine the significance.
 }
 \usage{
-run.beta.mixture.model(candidate,thread=1,is.candidate=rep(1,nrow(candidate)))
+run.beta.mixture.model(candidate,thread=1,distance=0.3,adjusted_pval=0.05,cell_number=8)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,9 +20,7 @@ run.beta.mixture.model(candidate,thread=1,is.candidate=rep(1,nrow(candidate)))
 \item{thread}{Number of thread used to be tun beta mixture model.
 %%     ~~Describe \code{x} here~~
 }
-\item{is.candidate}{A numeric vector containning the candidate information for the input loci, with 1 denotes candidate and 0 denotes non-condidate loci.
-%%     ~~Describe \code{x} here~~
-}
+
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -57,6 +55,6 @@ https://github.com/Evan-Evans/Beta-Mixture-Model
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-#run.beta.mixture.model(candidate,thread=1,is.candidate=rep(1,nrow(candidate)))
+#run.beta.mixture.model(candidate,thread=1,distance=0.3,adjusted_pval=0.05,cell_number=8)
 }
 
