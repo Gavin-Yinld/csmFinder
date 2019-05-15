@@ -1,5 +1,5 @@
 ##########################################################################################################################
-beta_mixture_model <- function(candidate,thread=1,distance=0.3,adjusted_pval=0.05,cell_number=8){
+run.beta.mixture.model <- function(candidate,thread=1,distance=0.3,adjusted_pval=0.05,cell_number=8){
   options(stringsAsFactors=F)
   library(data.table)
   library(parallel)
