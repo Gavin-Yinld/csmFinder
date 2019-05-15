@@ -3,10 +3,10 @@
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 %%  ~~function to do ... ~~
-nonparametric_Bayesian_clustering
+nonparametric_Bayesian_clustering to group sequencing reads
 }
 \description{
-Grouping the sequence reads into hyper- and hypo-methylated subsets, and identify the segments with significant methylation difference bwtween two subsets as pCSM loci.
+Grouping the sequencing reads into hyper- and hypo-methylated subsets, and identify the segments with significant methylation difference bwtween two subsets as pCSM loci.
 }
 \usage{
 Nonparametric_Bayesian_clustering(segment, delta = 0.5, tau = 0.5, nperm = 1000, thread = 1)
@@ -18,15 +18,19 @@ the candidate segments used for CSM identification
 }
   \item{delta}{
 %%     ~~Describe \code{delta} here~~
+scalar, threshold for choosing seed clusters, 0 < delta < 0.5
 }
   \item{tau}{
 %%     ~~Describe \code{tau} here~~
+scalar, separation parameter
 }
   \item{nperm}{
 %%     ~~Describe \code{nperm} here~~
+number of random permutation to inference the pCSM segments
 }
   \item{thread}{
 %%     ~~Describe \code{thread} here~~
+number of threads used to identify pCSM segments
 }
 }
 \details{
@@ -35,7 +39,7 @@ the candidate segments used for CSM identification
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
+%%  \item{pcsm_segment }{matrix contains the methylation difference between hypo- and hyper-methylated subsets and the significance of the difference}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
@@ -55,9 +59,6 @@ the candidate segments used for CSM identification
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-
+#Nonparametric_Bayesian_clustering(segment, delta = 0.5, tau = 0.5, nperm = 1000, thread = 1)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
