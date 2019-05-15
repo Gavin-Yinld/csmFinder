@@ -36,9 +36,7 @@ run.beta.mixture.model(candidate,thread=1,is.candidate=rep(1,nrow(candidate)))
 \item{beta.mixture.output}{The matrix of beta mixture model output
 %%     ~~Describe \code{x} here~~
 }
-\item{is.csm}{A nuneric vector containning the index of input loci determined as pCSM loci
-%%     ~~Describe \code{x} here~~
-}
+
 
 
 }
