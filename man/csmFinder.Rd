@@ -67,7 +67,10 @@ Luo, Y., et al., 2018, Integrative single-cell omics analyses reveal epigenetic 
 }
 \examples{
 ###need achieved candidate object from former steps.  
-#pCSM_segment <- csmFinder(candidate,data_type='regular')
-#pCSM_segment2 <- csmFinder(scCandidate,data_type='single-cell',depth=10)
+#for bulk methylome
+#pcsm_segment <- csmFinder(candidate,data_type='regular',thread=1)
+
+#for single-cell methylome
+#scPcsm_segment <- csmFinder(scCandidate,data_type='single-cell',thread=1)
 }
 
