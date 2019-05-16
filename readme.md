@@ -129,12 +129,9 @@ For both bulk methylome and single-cell methylome, the immediately overlapped pC
 pcsm_loci <- merge_segment(pcsm_segment,extension=0)
 pcsm_loci
     V1      V2      V3
-1 chr1 3027075 3027102
-2 chr1 3031383 3031539
-3 chr1 3031581 3031632
-4 chr1 3035642 3035833
-5 chr1 3035927 3036246
-6 chr1 3037739 3037802
+1 chr1 3026929 3027017
+2 chr1 3031539 3031623
+
 
 #for single-cell methylome
 scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
