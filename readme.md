@@ -138,3 +138,7 @@ pcsm_loci
 scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
 ```
 
+##Further analysis. Co-methylation anayysis and engen-pCSM loci extraction
+Downstream analysis for grouping the pCSM loci and extract eigen-pCSM loci can be found in [coMethy](https://github.com/Gavin-Yinld/coMethy)
+
+
