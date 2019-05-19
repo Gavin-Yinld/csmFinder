@@ -138,6 +138,6 @@ scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
 ```
 
 ## Further analysis to perfom virtual methylome dissection
-csmFinder is the first step in our pipeline to perfom virtual methylome dissection, downstream analysis for grouping the pCSM loci, extracting eigen-pCSM loci and dissecting methylomes can be found in the [coMethy](https://github.com/Gavin-Yinld/coMethy) package.
+csmFinder is the first step in our pipeline to perfom virtual methylome dissection, downstream analysis to group the pCSM loci, extract eigen-pCSM loci and dissect methylomes can be found in the [coMethy](https://github.com/Gavin-Yinld/coMethy) package.
 
 
