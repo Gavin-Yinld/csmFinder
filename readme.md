@@ -4,13 +4,13 @@
 
 # Introduction
 
-`csmFinder` is an R package for identifying putative cell-subset specific DNA methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subsets. Both of them identify the genomic loci with significant methylation difference bwtween two subsets as pCSM loci. 
+`csmFinder` is an R package for identifying putative cell-subset specific DNA methylation (pCSM) loci from single-cell or bulk methylomes. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets. For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the pooled sequence reads into hyper- and hypo-methylated subsets. Both methods identify the genomic loci with significant methylation difference between the two subsets as pCSM loci.
 
 # Installation
 `csmFinder` needs the following tools to be installed and available in the `PATH` environment:
 1.  [R](https://www.r-project.org/)(>=3.4.4)
-2.  [python2](https://www.python.org/downloads/) (>=2.7.10), with Numpy and Pandas module, to process the bismark extractor results
-3.  [bedtools2](https://github.com/arq5x/bedtools2) (>=2.28.0), to merge the overlapped pCSM segments into pCSM loci
+2.  [python2](https://www.python.org/downloads/) (>=2.7.10), with Numpy and Pandas modules installed, to process the bismark extractor results
+3.  [bedtools2](https://github.com/arq5x/bedtools2) (>=2.28.0), to merge the overlapped pCSM segments
 
 In R console,
 ```R
@@ -22,7 +22,7 @@ devtools::install_github("Gavin-Yinld/csmFinder")
 # How to Use
 
 ## Step 1. Generate 4-CpG segments from bismark extractor results
-`csmFinder` takes methylation state per base information of each sequence read in CpG context specificlly as input. Such input file may be obtained from `bismark` pipeline. A typical input file should be in ".gz" compressed format and looks like this:
+`csmFinder` takes methylation data from bisulfite sequence reads on the genome as input. Such an input file should be in ".gz" compressed format, and may be obtained from the bismark pipeline. An uncompressed example is listed below, with each row representing a bisulfite sequence read:
 
 ```
 ST-E00523:376:HL7JTCCXY:4:1102:23054:14494_1:N:0:ATGAGCAT + chr1  3023890 Z
@@ -32,8 +32,7 @@ ST-E00523:376:HL7JTCCXY:4:1107:31730:36592_1:N:0:ATGAGCAT + chr1  3023859 Z
 ST-E00523:376:HL7JTCCXY:4:1204:29305:15232_1:N:0:ATGAGCAT + chr1  3022537 Z
 ...
 ```
-To generate the 4-CpG segment coordinate, another table seperated text file contains the position of C in CpG context
-in forward strand of target genome is needed.
+To generate the 4-CpG segment coordinates, a table separated text file containing the position of all the cytosines in CpG context in the forward strand of genome is needed.
 
 ```chr1	3021025
 chr1	3021077
@@ -42,7 +41,7 @@ chr1	3021400
 chr1	3021720
 ...
 ```
-For bulk methylome, the 4-CpG segments could be extracted as follow:
+For bulk methylomes, the 4-CpG segments could be extracted as follows:
 
 ```perl
 library('csmFinder')
@@ -63,12 +62,12 @@ segment[2:5,]
 5 chr1:3026883_3026895_3026926_3026929               1111:3;
 # The first column denotes the genomic coordinate of the segment.
 # The second column denotes the methylation pattern of the segment. 
-# All pattern information are separated by semicolon.
-# Each pattern information contains two parts splited by colon, the pattern and the read depth supporting the pattern. 
+# All pattern information is separated by semicolon.
+# Each pattern information contains two parts split by colon, the pattern and the read depth supporting the pattern. 
 # The pattern part denotes the methylation states of all CpG in the segment with 0 representing for unmethylation and 1 for methylation.
-# For example, "1111:3" means this segment covered by 3 totlly methylated reads in this genomic loci.
+# For example, "1111:3" means this segment covered by 3 totally methylated reads in this genomic segment.
 ```
-For single-cell methylomes, `file_type="single-cell"` argument is needed, and the 4-CpG segments could be extracted as follow:
+For single-cell methylomes, the argument `file_type="single-cell"`  is needed for function bismark2segment, and the 4-CpG segments could be extracted as follows:
 
 ```R
 #get the demo datasets
@@ -78,7 +77,7 @@ file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 #generate the 4-CpG segment
 scSegment <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
-The data format of single-cell methylome analysis is consistent with our previous study, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
+The data format used in the single-cell methylome analysis is consistent with our previous study ([beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model))
 
 ## Step 2. Find the candidate pCSM segments
 The segments satisfy the following 2 criterions are considered as candidate pCSM segments:
