@@ -138,7 +138,7 @@ pcsm_loci
 scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
 ```
 
-## Further analysis. Co-methylation analysis and engen-pCSM loci extraction
+## Further analysis to perfom virtual methylome dissection
 csmFinder is the first step in our pipeline to perfom virtual methylome dissection, downstream analysis for grouping the pCSM loci, extracting eigen-pCSM loci and dissecting methylomes can be found in [coMethy](https://github.com/Gavin-Yinld/coMethy)
 
 
