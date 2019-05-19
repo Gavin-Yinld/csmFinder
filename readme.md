@@ -77,12 +77,12 @@ file_list <- paste(scDataDir,list.files(scDataDir),sep='/')
 #generate the 4-CpG segment
 scSegment <- bismark2segment(files=file_list,file_type="single-cell",CpG_file=CpG_ref)
 ```
-The data format used in the single-cell methylome analysis is consistent with our previous study ([beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model))
+The data format used in the single-cell methylome analysis is consistent with our previous study ([beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)).
 
-## Step 2. Find the candidate pCSM segments
-The segments satisfy the following 2 criterions are considered as candidate pCSM segments:
-1. The number of reads (for bulk methylome) or number of cells (for single-cell methylome) covering the segment is greater than threshold (default: 10).
-2. The candidate pCSM segments should be covered by both totally methylated read and totally unmethylated read (for bulk methylome), or totally methylated cell and totally unmethylated cell (for single-cell methylome). 
+## Step 2. Find candidate pCSM segments
+The segments satisfying the following 2 criteria are considered as candidate pCSM segments:
+1. The number of reads (for bulk methylome) or number of cells (for single-cell methylome) covering the segment is greater than the threshold parameter (default: 10).
+2. The candidate pCSM segments should be covered by both totally methylated reads and totally unmethylated reads (for bulk methylome), or totally methylated cells and totally unmethylated cells (for single-cell methylome).
 
 ```perl
 #for bulk methylome
@@ -100,7 +100,7 @@ candidate[1:5,]
 scCandidate <- find_candidate(scSegment,data_type="single-cell",depth=10)
 ```
 ## Step 3. Identify pCSM segments 
-For bulk methylomes, a nonparametric Bayesian clustering algorithm is used for grouping the sequence reads into hyper- and hypo-methylated subset and determining the genomic loci with significant difference bwtween two subsets as pCSM segments. For single cell methylomes, a beta mixture model is involved to group the single cells into hyper- and hypo-methylated subsets.
+For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the sequence reads into hyper- and hypo-methylated subsets and pCSM segments are determined by testing difference between the two subsets. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets.
 ```perl
 #for bulk methylome
 pcsm_segment <- csmFinder(candidate,data_type='regular',thread=1)
@@ -120,9 +120,9 @@ pcsm_segment
 #for single-cell methylome
 scPcsm_segment <- csmFinder(scCandidate,data_type='single-cell',thread=1)
 ```
-For the illustration of the output of single-cell analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
-## Step 4. Merge the adjacent pCSM segments to pCSM loci
-For both bulk methylome and single-cell methylome, the immediately overlapped pCSM segments are merged into pCSM region when `extension=0`. `extension` parameter controls the length need to extend in both ends of the pCSM segments, for example, `extension=100` means that the pCSM segments will be extended 100bp in both of their upstream and downstream, and the immediately overlapped pCSM segments will be merged after entension.
+For the illustration of the output of the single-cell methylome analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
+## Step 4. Merge adjacent pCSM segments to pCSM loci
+For both bulk and single-cell methylomes, the overlapped pCSM segments are merged into pCSM region when `extension=0`. The argument  `extension` controls the length need to extend in both ends of the pCSM segments, for example, `extension=100` means that the pCSM segments will be first extended 100bp in both upstream and downstream; after the extension, the overlapped ones are then merged into pCSM loci.
 ```R
 #for bulk methylome
 pcsm_loci <- merge_segment(pcsm_segment,extension=0)
@@ -138,6 +138,6 @@ scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
 ```
 
 ## Further analysis to perfom virtual methylome dissection
-csmFinder is the first step in our pipeline to perfom virtual methylome dissection, downstream analysis for grouping the pCSM loci, extracting eigen-pCSM loci and dissecting methylomes can be found in [coMethy](https://github.com/Gavin-Yinld/coMethy)
+csmFinder is the first step in our pipeline to perfom virtual methylome dissection, downstream analysis for grouping the pCSM loci, extracting eigen-pCSM loci and dissecting methylomes can be found in the [coMethy](https://github.com/Gavin-Yinld/coMethy) package.
 
 
