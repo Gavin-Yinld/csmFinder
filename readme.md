@@ -81,7 +81,7 @@ The data format used in the single-cell methylome analysis is consistent with ou
 
 ## Step 2. Find candidate pCSM segments
 The segments satisfying the following 2 criteria are considered as candidate pCSM segments:
-1. To ensure the statistical power, the number of reads (for bulk methylome) or number of cells (for single-cell methylome) covering the segment is greater than the threshold parameter (default: 10). Larger depth leads to more reliable results, but also losing the loci with low depth.
+1. To ensure the statistical power, the number of reads (for bulk methylome) or number of cells (for single-cell methylome) covering the segment is greater than the threshold (default: depth=10). Increasing depth cutoff leads to more reliable results, but also less loci retained.
 
 2. The candidate pCSM segments should be covered by both totally methylated reads and totally unmethylated reads (for bulk methylome), or totally methylated cells and totally unmethylated cells (for single-cell methylome).
 
@@ -103,7 +103,7 @@ scCandidate <- find_candidate(scSegment,data_type="single-cell",depth=10)
 ## Step 3. Identify pCSM segments 
 For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the sequence reads into hyper- and hypo-methylated subsets and pCSM segments are determined by testing difference between the two subsets. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets. 
 
-By default, the loci with methylation difference between two subsets over 0.3 (distance=0.3) and the significance of the methylation difference between two subsets less than 0.05 (pval=0.05) are determined as pCSM loci. Setting larger `distance` or lower `pval` leads to larger methylation difference between two subsets. One can speed up the run by increasing the number of computational threads.
+By default, the loci with methylation difference between two subsets over 0.3 (distance=0.3) and the significance of the methylation difference between two subsets less than 0.05 (pval=0.05) are determined as pCSM loci. Increase the `distance` cutoff or reduce `pval` cutoff leads to increased methylation difference between two subsets. One can speed up the run by increasing the number of computational threads.
 ```perl
 #for bulk methylome
 pcsm_segment <- csmFinder(candidate,data_type='regular',distance=0.3,pval=0.05,thread=1)
