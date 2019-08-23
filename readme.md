@@ -100,10 +100,10 @@ candidate[1:5,]
 scCandidate <- find_candidate(scSegment,data_type="single-cell",depth=10)
 ```
 ## Step 3. Identify pCSM segments 
-For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the sequence reads into hyper- and hypo-methylated subsets and pCSM segments are determined by testing difference between the two subsets. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets.
+For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the sequence reads into hyper- and hypo-methylated subsets and pCSM segments are determined by testing difference between the two subsets. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets. By default, the loci with methylation difference between two subsets over 0.3 (distance=0.3) and the significance of the methylation difference between two subsets less than 0.05 (pval=0.05) are determined as pCSM loci. Setting larger 'distance' or lower 'pval' leads to larger methylation difference between two subsets. One can speed up the run by increasing the number of computational threads.
 ```perl
 #for bulk methylome
-pcsm_segment <- csmFinder(candidate,data_type='regular',thread=1)
+pcsm_segment <- csmFinder(candidate,data_type='regular',distance=0.3,pval=0.05,thread=1)
 pcsm_segment
                                      V1                     V2         d
 8  chr1:3026929_3026936_3026969_3027017         0000:8;1111:5; 1.0000000
@@ -118,7 +118,7 @@ pcsm_segment
 #"d" means the methylation difference between hypo- and hyper-methylated reads.
 
 #for single-cell methylome
-scPcsm_segment <- csmFinder(scCandidate,data_type='single-cell',thread=1)
+scPcsm_segment <- csmFinder(scCandidate,data_type='single-cell',distance=0.3,pval=0.05,thread=1)
 ```
 For the illustration of the output of the single-cell methylome analysis, please see [beta mixture model](https://github.com/Evan-Evans/Beta-Mixture-Model)
 ## Step 4. Merge adjacent pCSM segments to pCSM loci
@@ -134,7 +134,7 @@ pcsm_loci
 
 
 #for single-cell methylome
-scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell",extension=0)
+scPcsm_loci <- merge_segment(scPcsm_segment,data_type="single-cell")
 ```
 
 ## Further analysis to perfom virtual methylome dissection
