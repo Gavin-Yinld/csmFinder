@@ -100,7 +100,9 @@ candidate[1:5,]
 scCandidate <- find_candidate(scSegment,data_type="single-cell",depth=10)
 ```
 ## Step 3. Identify pCSM segments 
-For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the sequence reads into hyper- and hypo-methylated subsets and pCSM segments are determined by testing difference between the two subsets. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets. By default, the loci with methylation difference between two subsets over 0.3 (distance=0.3) and the significance of the methylation difference between two subsets less than 0.05 (pval=0.05) are determined as pCSM loci. Setting larger 'distance' or lower 'pval' leads to larger methylation difference between two subsets. One can speed up the run by increasing the number of computational threads.
+For bulk methylomes, a nonparametric Bayesian clustering algorithm is used to group the sequence reads into hyper- and hypo-methylated subsets and pCSM segments are determined by testing difference between the two subsets. For single cell methylomes, a beta mixture model is used to group the single cells into hyper- and hypo-methylated subsets. 
+
+By default, the loci with methylation difference between two subsets over 0.3 (distance=0.3) and the significance of the methylation difference between two subsets less than 0.05 (pval=0.05) are determined as pCSM loci. Setting larger `distance` or lower `pval` leads to larger methylation difference between two subsets. One can speed up the run by increasing the number of computational threads.
 ```perl
 #for bulk methylome
 pcsm_segment <- csmFinder(candidate,data_type='regular',distance=0.3,pval=0.05,thread=1)
