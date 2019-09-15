@@ -31,7 +31,7 @@ find_candidate <- function(segment,depth=10,thread=1,data_type='regular')
 		stopCluster(cl)
 	} else {seg_info  <- t(apply(beta.input,1,candidate.judge.bulk))}
 	control_set=beta.input[which(seg_info[,1]>=coverage),]
-	is.candidate = seg_info[which(seg_info[,1]>=coverage),2]
+	is.candidate = seg_info[which(seg_info[,1]>=coverage & seg_info[,1]<1000),2]
 	candidate=control_set[which(is.candidate==1),]
 	return(candidate)
 	}
