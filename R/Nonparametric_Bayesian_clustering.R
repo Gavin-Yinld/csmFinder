@@ -722,7 +722,7 @@ if(thread>=3)
 	require(parallel)
 	cl <- makeCluster(thread-1)
 	clusterExport(cl, list("str_split"))
-	out <- t(parApply(cl,segment,1,csmdetecter))
+	out <- parApply(cl,segment,1,csmdetecter)
 	stopCluster(cl)
 } else {out = apply(segment,1,csmdetecter)}
 
